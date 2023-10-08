@@ -1,7 +1,6 @@
 package org.example.demo.entity;
 
 import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 
@@ -10,12 +9,12 @@ import javax.persistence.*;
 @SQLDelete(sql = "UPDATE USERS SET deleted = true WHERE id=?")
 //@Where(clause = "deleted=false")
 public class Users {
+    private final boolean deleted = Boolean.FALSE;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstName;
     private String lastName;
-    private boolean deleted = Boolean.FALSE;
 
     public Users() {
     }

@@ -7,8 +7,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.List;
-
 @SpringBootApplication
 public class DemoApplication {
     public static void main(String[] args) {
@@ -21,11 +19,11 @@ public class DemoApplication {
             Users user1 = new Users("Vasya", "Petrov");
             Users user2 = new Users("Petya", "Ivanov");
 
-/* Добавление сущностей в БД */
+            /* Добавление сущностей в БД */
             repository.save(user1);
             repository.save(user2);
 
-/* Мягкое удаление сущности из БД */
+            /* Мягкое удаление сущности из БД */
             repository.deleteById(1L);
 
             for (Users user : repository.findAll()) {
