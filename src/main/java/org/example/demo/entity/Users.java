@@ -1,8 +1,7 @@
 package org.example.demo.entity;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.SQLDelete;
-
-import javax.persistence.*;
 
 @Entity
 @Table(name = "USERS")
